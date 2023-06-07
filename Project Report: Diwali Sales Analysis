@@ -1,0 +1,70 @@
+Introduction
+The purpose of this project is to analyze sales data during the Diwali festival. The dataset used for analysis contains information about customers, products, gender, age group, marital status, state, zone, occupation, product category, orders, and amount.
+
+## Data Preprocessing
+1. Imported the necessary libraries: `pandas`, `numpy`, `matplotlib.pyplot`, and `seaborn`.
+2. Read the Diwali sales data from a CSV file using the `pd.read_csv()` function.
+3. Checked the structure and summary of the dataset using `diwali.head()`, `diwali.info()`, and `diwali.describe()`.
+4. Identified missing values in the dataset using `diwali.isnull().sum()`.
+5. Dropped unnecessary columns ('Status' and 'unnamed1') using `diwali.drop()`.
+6. Dropped rows with missing values using `diwali.dropna()`.
+7. Converted the 'Amount' column to integer type using `diwali['Amount'] = diwali['Amount'].astype(int)`.
+8. Renamed the 'Marital_Status' column to 'Shadii' using `diwali.rename(columns={'Marital_Status': 'Shadii'})`.
+
+## Data Analysis and Visualization
+1. Analyzing Gender Distribution:
+   - Counted the number of males and females using `diwali.groupby().size()` and stored the results in `Counting`.
+   - Plotted a countplot of gender distribution using `sns.countplot()` and added labels to the bars using `ax.bar_label()`.
+
+2. Analyzing Gender-wise Sales:
+   - Calculated the total sales amount for each gender using `diwali.groupby().sum()` and stored the results in `Gender_pay`.
+   - Plotted a barplot of gender-wise sales using `sns.barplot()`.
+
+3. Analyzing Age Group and Gender Distribution:
+   - Plotted a countplot of age group distribution with hue as gender using `sns.countplot()`.
+   - Calculated the total sales amount for each age group using `diwali.groupby().sum()` and stored the results in `amount_count_age_group`.
+   - Plotted a barplot of age group-wise sales amount using `sns.barplot()`.
+
+4. Analyzing Sales by State:
+   - Calculated the total number of orders from the top 10 states using `diwali.groupby().sum()` and stored the results in `top_10_states`.
+   - Plotted a barplot of orders by state using `sns.barplot()`.
+
+5. Analyzing Marital Status Distribution:
+   - Plotted a countplot of marital status distribution using `sns.countplot()`.
+
+6. Analyzing Expense by Marital Status and Gender:
+   - Calculated the total expense amount by marital status and gender using `diwali.groupby().sum()` and stored the results in `Expense_data`.
+   - Plotted a barplot of expense by marital status with hue as gender using `sns.barplot()`.
+
+7. Analyzing Occupation Distribution:
+   - Plotted a countplot of occupation distribution with hue as gender using `sns.countplot()`.
+
+8. Analyzing Expense by Occupation:
+   - Calculated the total expense amount by occupation using `diwali.groupby().sum()` and stored the results in `Expense_data`.
+   - Plotted a barplot of expense by occupation using `sns.barplot()`.
+
+9. Analyzing Product Category Distribution:
+   - Plotted a countplot of product category distribution using `sns.countplot()`.
+
+10. Analyzing Sales by Product Category:
+    - Calcul
+
+ated the total sales amount by product category using `diwali.groupby().sum()` and stored the results in `product_cate`.
+    - Plotted a barplot of sales amount by product category using `sns.barplot()`.
+
+11. Analyzing Top Selling Products:
+    - Calculated the total number of orders for the top 10 selling products using `diwali.groupby().sum()` and stored the results in `sales_data`.
+    - Plotted a barplot of orders by product ID using `sns.barplot()`.
+
+## Conclusion
+The analysis of the Diwali sales data provides valuable insights into various aspects of the sales performance. Key findings from the analysis include:
+- The number of female customers is higher than the number of male customers.
+- Females contribute more to the total sales amount compared to males.
+- The age group with the highest sales amount is 26-35.
+- The top states in terms of the number of orders are identified.
+- The marital status distribution shows that most customers are unmarried.
+- Certain occupations contribute significantly to the overall sales amount.
+- The distribution of product categories reveals the popularity of different types of products.
+- The top selling products based on the number of orders are identified.
+
+These insights can be used to make informed business decisions and develop targeted marketing strategies for future Diwali sales events.
